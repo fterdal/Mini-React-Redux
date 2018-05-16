@@ -1,4 +1,5 @@
-import { createStore } from 'redux'
+import { createStore, applyMiddleware } from 'redux'
+import logger from 'redux-logger'
 
 /** Action Types
  */
@@ -28,7 +29,9 @@ const reducer = (state = defaultState, action) => {
   }
 }
 
-const store = createStore(reducer)
+const store = createStore(
+  reducer,
+  applyMiddleware(logger)
+)
 export default store
-
 

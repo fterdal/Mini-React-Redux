@@ -6,11 +6,8 @@ import store, {
   decrement,
 } from '../redux/store'
 
-console.log(store.getState())
 store.dispatch(increment())
-console.log(store.getState())
 store.dispatch(decrement())
-console.log(store.getState())
 
 const App = () => (
   <div>
