@@ -2,6 +2,8 @@ import React from 'react'
 import { render } from 'react-dom'
 import { connect, Provider } from 'react-redux'
 
+/** Redux Store
+ */
 import store, {
   increment,
   decrement,
@@ -36,6 +38,8 @@ const mapDispatch = (dispatch) => ({
 })
 const SmartButtons = connect(null, mapDispatch)(DumbButtons)
 
+/** Render to HTML
+ */
 const App = () => (
   <div>
     <h1>Hello from React!</h1>
