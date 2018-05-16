@@ -1,7 +1,7 @@
 {
-  "name": "Mini-React",
+  "name": "Mini-React-Redux",
   "version": "1.0.0",
-  "description": "A Very Minimal React Configuration",
+  "description": "A Very Minimal React Configuration (with Redux & React-Redux)",
   "main": "react/index.js",
   "scripts": {
     "build-watch": "webpack -w",
