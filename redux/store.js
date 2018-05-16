@@ -1,3 +1,5 @@
+import { createStore } from 'redux'
+
 /** Action Types
  */
 const INCREMENT_COUNTER = 'INCREMENT_COUNTER'
@@ -13,7 +15,7 @@ export const decrement = () => {
 }
 
 /** Reducer
-*/
+ */
 const defaultState = 0
 const reducer = (state = defaultState, action) => {
   switch (action.type) {
@@ -26,5 +28,7 @@ const reducer = (state = defaultState, action) => {
   }
 }
 
-export default reducer
+const store = createStore(reducer)
+export default store
+
 
