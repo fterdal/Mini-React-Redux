@@ -1,4 +1,4 @@
-# Mini React
+# Mini React Redux
 
 To get started:
 
