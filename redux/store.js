@@ -22,9 +22,7 @@ export const setCounter = value => {
   return { type: SET_COUNTER, value }
 }
 
-
-
-const shhhhhhhhThisIsDefinitelyExpress = async () => {
+const shhhhhhhhThisIsDefinitelyExpress = () => {
   const MIN = 1
   const MAX = 100
   const counter = Math.floor(Math.random() * (MAX - MIN) + MIN);
@@ -35,10 +33,16 @@ const shhhhhhhhThisIsDefinitelyExpress = async () => {
  */
 export const setRandomThunk = () => {
   return async dispatch => {
-    // const newCounterVal = await axios.get('localhost:3000/')
-    const newCounterVal = await shhhhhhhhThisIsDefinitelyExpress()
-    // console.log('newCounterVal', newCounterVal)
-    dispatch(setCounter(newCounterVal))
+    try {
+      // 👇 This is two levels of destructuring. From the axios response,
+      // 👇 I get back an object with a data object, which has a counter property.
+      const { data: { counter } } = await axios.get('http://localhost:3000/')
+      // const counter = await shhhhhhhhThisIsDefinitelyExpress()
+      // console.log('counter', counter)
+      dispatch(setCounter(counter))
+    } catch(err) {
+      console.error(err)
+    }
   }
 }
 
